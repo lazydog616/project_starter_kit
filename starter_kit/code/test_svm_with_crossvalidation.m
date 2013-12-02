@@ -6,7 +6,7 @@ load ../data/x_newquiz.mat
  Yt = train.labels;
 %Xq_counts = quiz.counts;
 %[ para ] = find_opt_para( Xt_counts,Yt);   
-[ para ] = find_opt_para_libsvm(Xt_counts, Yt);
+[ searchmin, fval, fval_v ] = find_opt_para_libsvm(Xt_counts, Yt, 20);
 
 % model = train(Yt,Xt_counts,sprintf('-c 1 -q -w1 %g -w2 %g -w3 %g -w4 %g -w5 %g',0.1165, 0.2814, 0.3468, 0.3237, 0.1078));
 % 

@@ -7,8 +7,8 @@ tic
 
 %z = [rbf_sigma,boxconstraint];
 minfn = @(z)CrossVal(z, xtrain, ytrain, 5);
-opts = optimset('TolX',5e-4,'TolFun',5e-4, 'MaxFunEvals', 600);
-[searchmin fval] = fminsearch(minfn,2 * rand(1,5),opts);
+opts = optimset('TolX',5e-4,'TolFun',5e-4, 'MaxFunEvals',20000);
+[searchmin fval] = fminsearch(minfn,[ 1.6114    1.5839    0.7723    0.7239    0.6707],opts);
 fval
 searchmin
 toc
