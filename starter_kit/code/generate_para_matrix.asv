@@ -1,0 +1,26 @@
+function [ para_matrix ] = generate_para_matrix( lb, ub, step )
+%geberate_para_matrix : func to generate the parameter matrix for grid
+%search
+% lb: 1 x N vector, lower bound for parameters
+% ub: 1 x N vector, upper bound for parameters
+% step: 1 x N vector, step for related parameters
+
+para_size = (ub - lb)./step;
+para_num = numel(ub);
+row = 1;
+for i = 1 : para_num
+    row = row * para_size(i);
+end
+%para_matrix = zeros(row, para_num);
+para_matrix = lb(1) : step(1) : ub(1);
+for i = 2 : para_num
+    tmp = lb(i) : step(i) : ub(i);
+    tmp = tmp';
+    para_row_size = size(para_matrix,1);
+    para_matrix = repmat(para_matrix, para_size(i),1);
+    for j = 1 : para_size()
+    
+end
+
+end
+
