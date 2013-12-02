@@ -30,6 +30,7 @@ for i = 1 : numel(metadata)
     end
     
 end
+text_features = sparse(text_features);
 toc
 
 end
