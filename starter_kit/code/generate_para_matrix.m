@@ -15,7 +15,12 @@ for i = 1 : para_num
     row = row * para_size(i);
 end
 %para_matrix = zeros(row, para_num);
-para_matrix = lb(1) : step(1) : ub(1);
+if(~isnan(step(1))&&~isinf(step(1)))
+    para_matrix = lb(1) : step(1) : ub(1);
+else 
+    para_matrix = lb(1);
+end
+
 para_matrix = para_matrix';
 for i = 2 : para_num
      new_col = lb(i) .* ones(size(para_matrix,1),1);
